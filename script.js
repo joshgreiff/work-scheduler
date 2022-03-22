@@ -22,13 +22,36 @@ $("button").on("click", function(){
     window.alert("Task Saved!")
 })
 
-$("#8am").siblings("textarea").val(localStorage.getItem("8am")) 
-$("#9am").siblings("textarea").val(localStorage.getItem("9am")) 
-$("#10am").siblings("textarea").val(localStorage.getItem("10am")) 
-$("#11am").siblings("textarea").val(localStorage.getItem("11am")) 
-$("#12pm").siblings("textarea").val(localStorage.getItem("12pm")) 
-$("#1pm").siblings("textarea").val(localStorage.getItem("1pm")) 
-$("#2pm").siblings("textarea").val(localStorage.getItem("2pm")) 
-$("#3pm").siblings("textarea").val(localStorage.getItem("3pm")) 
-$("#4pm").siblings("textarea").val(localStorage.getItem("4pm")) 
-$("#5pm").siblings("textarea").val(localStorage.getItem("5pm")) 
+$("#8").siblings("textarea").val(localStorage.getItem("8")) 
+$("#9").siblings("textarea").val(localStorage.getItem("9")) 
+$("#10").siblings("textarea").val(localStorage.getItem("10")) 
+$("#11").siblings("textarea").val(localStorage.getItem("11")) 
+$("#12").siblings("textarea").val(localStorage.getItem("12")) 
+$("#13").siblings("textarea").val(localStorage.getItem("13")) 
+$("#14").siblings("textarea").val(localStorage.getItem("14")) 
+$("#15").siblings("textarea").val(localStorage.getItem("15")) 
+$("#16").siblings("textarea").val(localStorage.getItem("16")) 
+$("#17").siblings("textarea").val(localStorage.getItem("17")) 
+
+
+
+    var currentHour = moment().hour();
+    // JSON.stringify(currentHour);
+    
+    $(".middleCol").each(function(){
+        checkHour = $(this).siblings(".timeBox").attr("id")
+        
+            if(checkHour == currentHour){
+                $(this).css("background-color","green")
+            }
+            else if (checkHour !== currentHour){
+                $(this).css("background-color","red")
+            }
+        
+    });
+    
+
+
+
+
+// setInterval(checkTime, 1000)
