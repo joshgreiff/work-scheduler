@@ -42,11 +42,15 @@ $("#17").siblings("textarea").val(localStorage.getItem("17"))
         checkHour = $(this).siblings(".timeBox").attr("id")
         
             if(checkHour == currentHour){
-                $(this).css("background-color","green")
-            }
-            else if (checkHour !== currentHour){
                 $(this).css("background-color","red")
             }
+            else if (checkHour < currentHour){
+                $(this).css("background-color","lightgray")
+            }
+            else if(checkHour > currentHour){
+                $(this).css("background-color", "green")
+            }
+            
         
     });
     
